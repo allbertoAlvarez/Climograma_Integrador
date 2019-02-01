@@ -10,6 +10,8 @@ namespace Climograma_Modelo
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
