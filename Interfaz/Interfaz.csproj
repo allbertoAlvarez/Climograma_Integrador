@@ -65,6 +65,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,16 +83,34 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformacionTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InformacionTabla.Designer.cs">
+      <DependentUpon>InformacionTabla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapa.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Mapa.Designer.cs">
       <DependentUpon>Mapa.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformacionGraficas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InformacionGraficas.Designer.cs">
+      <DependentUpon>InformacionGraficas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformacionGraficas.resx">
+      <DependentUpon>InformacionGraficas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformacionTabla.resx">
+      <DependentUpon>InformacionTabla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mapa.resx">
       <DependentUpon>Mapa.cs</DependentUpon>
