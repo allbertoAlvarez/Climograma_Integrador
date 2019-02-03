@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Climograma", "Climograma\Climograma.csproj", "{85452B7B-6B7F-4C08-89E3-365E0DDA44A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventana_Principal", "Climograma\Ventana_Principal.csproj", "{85452B7B-6B7F-4C08-89E3-365E0DDA44A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Climograma_Modelo", "Climograma_Modelo\Climograma_Modelo.csproj", "{E1F0BCD5-6880-429E-B252-13D3FDF6D14F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estudio", "Climograma_Modelo\Estudio.csproj", "{E1F0BCD5-6880-429E-B252-13D3FDF6D14F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
