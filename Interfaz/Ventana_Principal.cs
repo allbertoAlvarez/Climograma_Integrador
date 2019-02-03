@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    static class Program
+    static class Ventana_Principal
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
