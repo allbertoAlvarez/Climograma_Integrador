@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Climograma_Modelo
+namespace Modelo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hg");
-
         }
     }
 }

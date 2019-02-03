@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Climograma.Properties
+namespace Interfaz.Properties
 {
 
 

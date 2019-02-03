@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85452B7B-6B7F-4C08-89E3-365E0DDA44A0}</ProjectGuid>
+    <ProjectGuid>{34849AEF-3943-4E73-8FF3-F570AA9D3C47}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Climograma</RootNamespace>
-    <AssemblyName>Climograma</AssemblyName>
+    <RootNamespace>Interfaz</RootNamespace>
+    <AssemblyName>Interfaz</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

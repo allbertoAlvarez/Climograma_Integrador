@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1F0BCD5-6880-429E-B252-13D3FDF6D14F}</ProjectGuid>
+    <ProjectGuid>{184807E6-7612-42CF-8F28-EBC1D8CF96F6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Climograma_Modelo</RootNamespace>
-    <AssemblyName>Climograma_Modelo</AssemblyName>
+    <RootNamespace>Modelo</RootNamespace>
+    <AssemblyName>Modelo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

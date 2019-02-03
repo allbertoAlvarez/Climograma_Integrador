@@ -1,4 +1,4 @@
-﻿namespace Climograma
+﻿namespace Interfaz
 {
     partial class Form1
     {
