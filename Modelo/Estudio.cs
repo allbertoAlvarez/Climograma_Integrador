@@ -10,7 +10,7 @@ namespace Modelo
 {
 
 
-    class Estudio
+    public class Estudio
     {
 
         public static int FECHA = 0;
@@ -29,8 +29,8 @@ namespace Modelo
         public static String PANCE = "Pance";
         public static String AGUACATAL = "Aguacatal";
         public static String CALI = "Cali";
-        public static String CAÑAVERALEJO = "Cañaveralejo";
-        public static String LILI = "lili";
+        public static String CAÑAVERALEJO = "Canaveralejo";
+        public static String LILI = "Lili";
         public static String MELENDEZ = "Melendez";
 
 
@@ -52,7 +52,7 @@ namespace Modelo
             }
 
             //Lee todas las lineas del archivo
-            Lineas = File.ReadAllLines("..\\..\\Datos\\Datos.csv");
+            Lineas = File.ReadAllLines("..\\..\\..\\Modelo\\Datos\\Datos.csv");
 
             //
             foreach (var i in Lineas) {
@@ -68,6 +68,8 @@ namespace Modelo
                      String punto = linea[PUNTO];
                      String rio = linea[RIO];
                      String[] coordenadas = linea[COORDENADAS].Split(';');
+                     double latitud = Double.Parse(coordenadas[0]);
+                     double longitud = Double.Parse(coordenadas[1]);
                      double ica_ideam = Double.Parse(linea[ICA_IDEAM]);
                      double od = Double.Parse(linea[OD]);
                      double ph = Double.Parse(linea[PH]);
@@ -75,35 +77,38 @@ namespace Modelo
                      double ce = Double.Parse(linea[CE]);
                      double sst = Double.Parse(linea[SST].Remove(linea[SST].Length - 1));
 
+                   
 
-                    Muestra muestra = new Muestra(fecha,muestraNumero,puntoDeMuestreo,punto,rio,coordenadas,ica_ideam,od,ph,dqo,ce,sst);
 
-                    if (muestra.Rio.Equals(PANCE))
+
+                    Muestra muestra = new Muestra(fecha,muestraNumero,puntoDeMuestreo,punto,rio, latitud, longitud,ica_ideam,od,ph,dqo,ce,sst);
+
+                    if (muestra.Rio.Equals(AGUACATAL))
                     {
                         ((ArrayList)Hash_Muestras[1]).Add(muestra);
                     }
 
-                    if (muestra.Rio.Equals(AGUACATAL))
+                    if (muestra.Rio.Equals(CALI))
                     {
                         ((ArrayList)Hash_Muestras[2]).Add(muestra);
                     }
 
-                    if (muestra.Rio.Equals(CALI))
+                    if (muestra.Rio.Equals(CAÑAVERALEJO))
                     {
                         ((ArrayList)Hash_Muestras[3]).Add(muestra);
                     }
 
-                    if (muestra.Rio.Equals(CAÑAVERALEJO))
+                    if (muestra.Rio.Equals(LILI))
                     {
                         ((ArrayList)Hash_Muestras[4]).Add(muestra);
                     }
 
-                    if (muestra.Rio.Equals(LILI))
+                    if (muestra.Rio.Equals(MELENDEZ))
                     {
                         ((ArrayList)Hash_Muestras[5]).Add(muestra);
                     }
 
-                    if (muestra.Rio.Equals(MELENDEZ))
+                    if (muestra.Rio.Equals(PANCE))
                     {
                         ((ArrayList)Hash_Muestras[6]).Add(muestra);
                     }

@@ -59,8 +59,11 @@
             this.dataGridView_Tabla.Location = new System.Drawing.Point(13, 153);
             this.dataGridView_Tabla.Name = "dataGridView_Tabla";
             this.dataGridView_Tabla.ReadOnly = true;
-            this.dataGridView_Tabla.Size = new System.Drawing.Size(483, 252);
+            this.dataGridView_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Tabla.Size = new System.Drawing.Size(804, 252);
             this.dataGridView_Tabla.TabIndex = 1;
+            this.dataGridView_Tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tabla_CellClick);
+       
             // 
             // label_Rio
             // 
@@ -80,6 +83,7 @@
             this.button_Informacion.TabIndex = 3;
             this.button_Informacion.Text = "Informacion";
             this.button_Informacion.UseVisualStyleBackColor = true;
+            this.button_Informacion.Click += new System.EventHandler(this.button_Informacion_Click);
             // 
             // button_Limpiar_Tabla
             // 
@@ -89,6 +93,7 @@
             this.button_Limpiar_Tabla.TabIndex = 4;
             this.button_Limpiar_Tabla.Text = "Limpiar tabla";
             this.button_Limpiar_Tabla.UseVisualStyleBackColor = true;
+            this.button_Limpiar_Tabla.Click += new System.EventHandler(this.button_Limpiar_Tabla_Click);
             // 
             // InformacionTabla
             // 
@@ -100,7 +105,7 @@
             this.Controls.Add(this.dataGridView_Tabla);
             this.Controls.Add(this.listBox_Rios);
             this.Name = "InformacionTabla";
-            this.Size = new System.Drawing.Size(508, 408);
+            this.Size = new System.Drawing.Size(834, 446);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,5 +119,7 @@
         private System.Windows.Forms.Label label_Rio;
         private System.Windows.Forms.Button button_Informacion;
         private System.Windows.Forms.Button button_Limpiar_Tabla;
+
+
     }
 }

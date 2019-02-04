@@ -77,11 +77,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Ventana_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Ventana_Principal.Designer.cs">
+      <DependentUpon>Ventana_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="InformacionTabla.cs">
       <SubType>UserControl</SubType>
@@ -89,31 +89,22 @@
     <Compile Include="InformacionTabla.Designer.cs">
       <DependentUpon>InformacionTabla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mapa.Designer.cs">
-      <DependentUpon>Mapa.cs</DependentUpon>
-    </Compile>
     <Compile Include="InformacionGraficas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="InformacionGraficas.Designer.cs">
       <DependentUpon>InformacionGraficas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventana_Principal.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Ventana_Principal.resx">
+      <DependentUpon>Ventana_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformacionGraficas.resx">
       <DependentUpon>InformacionGraficas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformacionTabla.resx">
       <DependentUpon>InformacionTabla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mapa.resx">
-      <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{184807e6-7612-42cf-8f28-ebc1d8cf96f6}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
