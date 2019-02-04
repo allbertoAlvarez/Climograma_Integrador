@@ -41,8 +41,6 @@ namespace Interfaz
             {
                 dataGridView_Tabla.DataSource = VP.Estudio.Hash_Muestras[listBox_Rios.SelectedIndex + 1];
 
-               
-
             }
             else
             {
@@ -55,13 +53,21 @@ namespace Interfaz
             dataGridView_Tabla.DataSource = "";
         }
 
-        private void dataGridView_Tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            VP.marcadores(Double.Parse(dataGridView_Tabla.CurrentRow.Cells[11].Value.ToString()), Double.Parse(dataGridView_Tabla.CurrentRow.Cells[12].Value.ToString()));
-            MessageBox.Show(dataGridView_Tabla.CurrentRow.Cells[11].Value.ToString()+" "+ dataGridView_Tabla.CurrentRow.Cells[12].Value.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            int indice = listBox_Rios.SelectedIndex + 1;
+            ArrayList muestras = (ArrayList)VP.Estudio.Hash_Muestras[indice];
+
+
+            if (dataGridView_Tabla.CurrentRow.Index > -1) {
+                 int seleccion = dataGridView_Tabla.CurrentRow.Index;
+            
+                VP.marcadores(((Muestra)muestras[seleccion]).Latitud, ((Muestra)muestras[seleccion]).Longitud);
+            }
 
         }
-
-       
     }
 }
