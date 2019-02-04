@@ -44,92 +44,94 @@ namespace Modelo
         }
 
         //Este metodo se encargara de leer los datos e introducirlos en la tabla hash
-        public void inicializar_Datos() {
+        public void inicializar_Datos()
+        {
 
             //Llenar hashTable de arrays
-            for (int i = 0; i<=6; i++) {
+            for (int i = 0; i <= 6; i++)
+            {
                 Hash_Muestras.Add(i, new ArrayList());
             }
 
-            
-                    String line;
-                try
+
+            String line;
+            try
+            {
+                StreamReader sr = new StreamReader("..\\..\\..\\Modelo\\Datos\\Datos.csv");
+
+                line = "";
+                string[] datos = null;
+                while ((line = sr.ReadLine()) != null)
                 {
-                    StreamReader sr = new StreamReader("..\\..\\..\\Modelo\\Datos\\Datos.csv");
+                    datos = line.Split(',');
 
-                    line = "";
-                    string[] datos = null;
-                    while ((line = sr.ReadLine()) != null)
+
+                    if (!datos[0].Equals("Fecha"))
                     {
-                        datos = line.Split(',');
+
+                        String fecha = datos[FECHA];
+                        int muestraNumero = Int32.Parse(datos[MUESTREO_No]);
+                        String puntoDeMuestreo = datos[PUNTO_MUESTREO];
+                        String punto = datos[PUNTO];
+                        String rio = datos[RIO];
+                        String[] coordenadas = datos[COORDENADAS].Split(';');
+                        double latitud = Double.Parse(coordenadas[0].Replace('.',','));
+                        double longitud = Double.Parse(coordenadas[1].Replace('.', ','));
+                        double ica_ideam = Convert.ToDouble(datos[ICA_IDEAM].Replace('.', ','));
+                        double od = Convert.ToDouble(datos[OD].Replace('.', ','));
+                        double ph = Convert.ToDouble(datos[PH].Replace('.', ','));
+                        double dqo = Convert.ToDouble(datos[DQO].Replace('.', ','));
+                        double ce = Convert.ToDouble(datos[CE].Replace('.', ','));
+                        double sst = Convert.ToDouble(datos[SST].Remove(datos[SST].Length - 1).Replace('.', ','));
 
 
-                        if (!datos[0].Equals("Fecha"))
+                        Muestra muestra = new Muestra(fecha, muestraNumero, puntoDeMuestreo, punto, rio, latitud, longitud, ica_ideam, od, ph, dqo, ce, sst);
+
+                        if (muestra.Rio.Equals(AGUACATAL))
                         {
-
-                            String fecha = datos[FECHA];
-                            int muestraNumero = Int32.Parse(datos[MUESTREO_No]);
-                            String puntoDeMuestreo = datos[PUNTO_MUESTREO];
-                            String punto = datos[PUNTO];
-                            String rio = datos[RIO];
-                            String[] coordenadas = datos[COORDENADAS].Split(';');
-                            double latitud = Double.Parse(coordenadas[0]);
-                            double longitud = Double.Parse(coordenadas[1]);
-                            double ica_ideam = Convert.ToDouble(datos[ICA_IDEAM]);
-                            double od = Convert.ToDouble(datos[OD]);
-                            double ph = Convert.ToDouble(datos[PH]);
-                            double dqo = Convert.ToDouble(datos[DQO]);
-                            double ce = Convert.ToDouble(datos[CE]);
-                            double sst = Convert.ToDouble(datos[SST].Remove(datos[SST].Length - 1));
-
-                           
-                            Muestra muestra = new Muestra(fecha, muestraNumero, puntoDeMuestreo, punto, rio, latitud, longitud, ica_ideam, od, ph, dqo, ce, sst);
-
-                            if (muestra.Rio.Equals(AGUACATAL))
-                            {
-                                ((ArrayList)Hash_Muestras[1]).Add(muestra);
-                            }
-
-                            if (muestra.Rio.Equals(CALI))
-                            {
-                                ((ArrayList)Hash_Muestras[2]).Add(muestra);
-                            }
-
-                            if (muestra.Rio.Equals(CAÑAVERALEJO))
-                            {
-                                ((ArrayList)Hash_Muestras[3]).Add(muestra);
-                            }
-
-                            if (muestra.Rio.Equals(LILI))
-                            {
-                                ((ArrayList)Hash_Muestras[4]).Add(muestra);
-                            }
-
-                            if (muestra.Rio.Equals(MELENDEZ))
-                            {
-                                ((ArrayList)Hash_Muestras[5]).Add(muestra);
-                            }
-
-                            if (muestra.Rio.Equals(PANCE))
-                            {
-                                ((ArrayList)Hash_Muestras[6]).Add(muestra);
-                            }
+                            ((ArrayList)Hash_Muestras[1]).Add(muestra);
                         }
 
+                        if (muestra.Rio.Equals(CALI))
+                        {
+                            ((ArrayList)Hash_Muestras[2]).Add(muestra);
+                        }
 
+                        if (muestra.Rio.Equals(CAÑAVERALEJO))
+                        {
+                            ((ArrayList)Hash_Muestras[3]).Add(muestra);
+                        }
+
+                        if (muestra.Rio.Equals(LILI))
+                        {
+                            ((ArrayList)Hash_Muestras[4]).Add(muestra);
+                        }
+
+                        if (muestra.Rio.Equals(MELENDEZ))
+                        {
+                            ((ArrayList)Hash_Muestras[5]).Add(muestra);
+                        }
+
+                        if (muestra.Rio.Equals(PANCE))
+                        {
+                            ((ArrayList)Hash_Muestras[6]).Add(muestra);
+                        }
                     }
 
-                    sr.Close();
 
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Exception: " + e.Message);
-                }
+
+                sr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
 
 
 
-                   
+
         }
 
         public Hashtable Hash_Muestras { get => hash_Muestras; set => hash_Muestras = value; }
