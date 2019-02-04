@@ -41,5 +41,9 @@ namespace Interfaz
 
         }
 
-    }
+		private void informacionTabla_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
